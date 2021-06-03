@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8FAFF"
+    tools:context=".main_diary">
+
+
+    <EditText
+        android:id="@+id/date"
+        android:layout_width="263dp"
+        android:layout_height="47dp"
+
+        android:background="@drawable/line"
+        android:focusable="false"
+        android:gravity="center"
+        android:hint="請選擇日期"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="32dp"
+        android:layout_height="28dp"
+        app:layout_constraintBottom_toBottomOf="@+id/date"
+        app:layout_constraintEnd_toEndOf="@+id/date"
+        app:layout_constraintHorizontal_bias="0.086"
+        app:layout_constraintStart_toStartOf="@+id/date"
+        app:layout_constraintTop_toTopOf="@+id/date"
+        app:layout_constraintVertical_bias="0.526"
+        app:srcCompat="@drawable/calendar" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout6"
+        android:layout_width="269dp"
+        android:layout_height="100dp"
+        android:background="@drawable/line_3"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="79dp"
+            android:layout_height="65dp"
+            android:padding="5dp"
+            app:srcCompat="@drawable/suns" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="2dp"
+            android:text="Noon"
+            android:textColor="#F6B352"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="269dp"
+        android:layout_height="100dp"
+        android:background="@drawable/line_2"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date">
+
+        <LinearLayout
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="79dp"
+                android:layout_height="65dp"
+                android:padding="5dp"
+                app:srcCompat="@drawable/sun" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="2dp"
+                android:text="Moring"
+                android:textColor="#30A9DE"
+                android:textSize="18dp" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="181dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="168dp"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/textView19"
+                    android:layout_width="121dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="自製牌牛肉麵"
+                    android:textColor="#3F51B5"
+                    android:textSize="18sp"
+                    android:visibility="invisible" />
+
+                <ImageButton
+                    android:id="@+id/imageButton16"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#0000"
+                    android:scaleType="centerInside"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/aaa" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:text="平時懶惰的我，跟著此款App做出如此完美..."
+                android:textColor="#3F51B5"
+                android:textSize="14sp"
+                android:visibility="invisible" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="269dp"
+        android:layout_height="100dp"
+        android:background="@drawable/line_4"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="79dp"
+            android:layout_height="65dp"
+            android:padding="5dp"
+            app:srcCompat="@drawable/moon" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="2dp"
+            android:text="Night"
+            android:textColor="#353866"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/imageButton13"
+        android:layout_width="96dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="422dp"
+        android:background="#F7EFE4"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.342"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date"
+        app:srcCompat="@drawable/recipe_home" />
+
+    <ImageButton
+        android:id="@+id/imageButton14"
+        android:layout_width="96dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="422dp"
+        android:background="#F7EFE4"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="@+id/imageButton13"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date"
+        app:srcCompat="@drawable/user_home" />
+
+    <ImageButton
+        android:id="@+id/imageButton7"
+        android:layout_width="96dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="422dp"
+        android:background="#F7EFE4"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.676"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date"
+        app:srcCompat="@drawable/diary_home" />
+
+    <ImageButton
+        android:id="@+id/imageButton15"
+        android:layout_width="102dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="422dp"
+        android:background="#F7EFE4"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date"
+        app:srcCompat="@drawable/chatbot_home" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="298dp"
+        android:layout_height="117dp"
+        android:background="#0000"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
