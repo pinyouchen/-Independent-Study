@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E6EAF5"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+
+        android:id="@+id/linearLayout11"
+        android:layout_width="105dp"
+        android:layout_height="112dp"
+        android:background="@drawable/line_00"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/view2"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout12"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+
+            android:id="@+id/imageView23"
+            android:layout_width="54dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center|center_horizontal"
+            android:layout_marginTop="20dp"
+            app:srcCompat="@drawable/calendar" />
+
+        <EditText
+            android:id="@+id/date_edit"
+            android:layout_width="94dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|center_horizontal"
+            android:layout_marginTop="15dp"
+            android:background="@null"
+            android:focusable="false"
+            android:gravity="center"
+            android:hint="選擇日期"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout12"
+        android:layout_width="105dp"
+        android:layout_height="112dp"
+        android:background="@drawable/line_0513"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/view2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout11"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView25"
+            android:layout_width="57dp"
+            android:layout_height="63dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/clocks" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:outlineAmbientShadowColor="#673AB7" />
+
+    </LinearLayout>
+
+
+    <EditText
+
+        android:id="@+id/editTextTextPersonName2"
+        android:layout_width="244dp"
+        android:layout_height="30dp"
+        android:background="@drawable/corner_1"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="請輸入標題"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="250dp"
+        android:layout_height="2dp"
+        android:background="#ABC2FB"
+        app:layout_constraintBottom_toTopOf="@+id/image1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout11" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="250dp"
+        android:layout_height="2dp"
+        android:background="#ABC2FB"
+
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image1" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="244dp"
+        android:layout_height="120dp"
+        android:background="@drawable/corner_1"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="輸入內文"
+        android:inputType="textMultiLine"
+        android:lineSpacingExtra="10sp"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+
+    <ImageButton
+        android:id="@+id/gallery"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="#00FF0000"
+        android:scaleType="centerCrop"
+        android:src="@drawable/pictures"
+        app:layout_constraintBottom_toTopOf="@+id/view3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/image1"
+        app:layout_constraintTop_toBottomOf="@+id/camera" />
+
+    <ImageButton
+        android:id="@+id/camera"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="#00FF0000"
+        android:scaleType="centerCrop"
+        android:src="@drawable/camera"
+        app:layout_constraintBottom_toTopOf="@+id/gallery"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/image1"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    <ImageView
+        android:id="@+id/image1"
+        android:layout_width="177dp"
+        android:layout_height="144dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_baseline_image_24"
+        app:layout_constraintBottom_toTopOf="@+id/view3"
+        app:layout_constraintEnd_toStartOf="@+id/gallery"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
