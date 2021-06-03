@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <ImageButton
+                android:id="@+id/btnBeef"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:layout_marginTop="80px"
+                android:layout_marginLeft="40px"
+                android:src="@drawable/beef" />
+
+            <ImageButton
+                android:id="@+id/btnChicken"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:layout_marginTop="80px"
+                android:layout_marginLeft="50px"
+                android:src="@drawable/chicken_min" />
+
+            <ImageButton
+                android:id="@+id/btnPork"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:layout_marginTop="80px"
+                android:layout_marginLeft="50px"
+                android:src="@drawable/pig_min" />
+
+            <ImageButton
+                android:id="@+id/btnSheep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80px"
+                android:background="#00000000"
+                android:layout_marginLeft="50px"
+                android:src="@drawable/sheep" />
+
+            <ImageButton
+                android:id="@+id/btnSeafood"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:layout_marginTop="80px"
+                android:layout_marginLeft="50px"
+                android:src="@drawable/seafood" />
+
+            <ImageButton
+                android:id="@+id/btnVegetable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:layout_marginTop="80px"
+                android:layout_marginLeft="50px"
+                android:src="@drawable/vege" />
+
+            <ImageButton
+                android:id="@+id/btnFish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:layout_marginTop="80px"
+                android:layout_marginLeft="50px"
+                android:src="@drawable/fish" />
+
+            <ImageButton
+                android:id="@+id/btnEgg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80px"
+                android:layout_marginLeft="50px"
+                android:background="#00000000"
+                android:src="@drawable/egg" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:dividerHeight="10dp"
+        android:divider="@android:color/transparent"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+</LinearLayout>
