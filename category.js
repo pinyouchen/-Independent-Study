@@ -3,9 +3,9 @@
 //引用操作資料庫的物件
 const query = require('./asyncDB');
 
-var login = async function(email,password){
+var category_name = async function(name){
     var result = [];
-    await query('select * from user where email=? and password=?',[email,password])
+    await query('select * from category where category_name=?',[category_name])
     .then((data) => {
         result = {code:0, data:data};
     }, (error) => {
@@ -15,4 +15,4 @@ var login = async function(email,password){
     console.log(result)
     return result;
 }
-module.exports = {login};
+module.exports = {category_name};
