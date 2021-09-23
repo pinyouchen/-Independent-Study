@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E6EAF5"
+    tools:context=".new_diary">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            //選擇日期
+
+            <LinearLayout
+                android:id="@+id/linearLayout11"
+                android:layout_width="105dp"
+                android:layout_height="112dp"
+                android:background="@drawable/line_00"
+                android:layout_marginRight="40dp"
+                android:orientation="vertical">
+
+                <ImageView
+
+                    android:id="@+id/imageView23"
+                    android:layout_width="54dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center|center_horizontal"
+                    android:layout_marginTop="20dp"
+                    app:srcCompat="@drawable/calendar" />
+
+                <EditText
+                    android:id="@+id/ed_date"
+                    android:layout_width="94dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|center_horizontal"
+                    android:layout_marginTop="15dp"
+                    android:background="@null"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:hint="選擇日期"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#FFFFFF"
+                    android:textSize="14sp" />
+            </LinearLayout>
+            //選擇時段
+            <LinearLayout
+                android:id="@+id/linearLayout12"
+                android:layout_width="105dp"
+                android:layout_height="112dp"
+                android:background="@drawable/line_0513"
+                android:orientation="vertical"
+                android:layout_marginLeft="40dp">
+
+                <ImageView
+                    android:id="@+id/imageView25"
+                    android:layout_width="57dp"
+                    android:layout_height="63dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    app:srcCompat="@drawable/clocks" />
+
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_weight="1"
+                    android:outlineAmbientShadowColor="#673AB7" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="40dp"
+            android:orientation="horizontal">
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="250dp"
+                android:layout_height="2dp"
+                android:background="#ABC2FB" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="40dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/up_image"
+                android:layout_width="177dp"
+                android:layout_height="144dp"
+                android:scaleType="centerCrop"
+                android:layout_marginRight="70dp"
+                android:src="@drawable/ic_baseline_image_24" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/gallery"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="#00FF0000"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/pictures" />
+
+                <ImageButton
+                    android:id="@+id/camera"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="#00FF0000"
+                    android:scaleType="centerCrop"
+                    android:layout_marginTop="60dp"
+                    android:src="@drawable/camera" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="40dp"
+            android:orientation="horizontal">
+
+            <View
+                android:id="@+id/view3"
+                android:layout_width="250dp"
+                android:layout_height="2dp"
+                android:background="#ABC2FB" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/ed_title"
+                android:layout_width="244dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/corner_1"
+                android:ems="10"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:gravity="center"
+                android:hint="請輸入標題"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/ed_text"
+                android:layout_width="244dp"
+                android:layout_height="150dp"
+                android:background="@drawable/corner_1"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="輸入內文"
+                android:layout_marginTop="30dp"
+                android:inputType="textMultiLine"
+                android:lineSpacingExtra="15sp"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <!--    <Button-->
+    <!--        android:id="@+id/btn_insert"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginEnd="10dp"-->
+    <!--        android:layout_marginBottom="8dp"-->
+    <!--        android:backgroundTint="#E040FB"-->
+    <!--        android:text="save"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/ed_text" />-->
+
+</ScrollView>
+
