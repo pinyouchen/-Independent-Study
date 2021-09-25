@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:background="#E6EAF5"
+    tools:context=".diary_detail">
+    <TextView
+        android:id="@+id/txtID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ID:"
+        android:background="@drawable/corner_1"
+        android:textSize="20sp"
+        android:textColor="#081871"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/txTitle"
+            android:layout_width="260dp"
+            android:layout_height="41dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="標題"
+            android:background="@drawable/corner_1"
+            android:textSize="20sp"
+            android:textColor="#081871"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/detail_view"
+            android:layout_width="243dp"
+            android:layout_height="202dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:background="#FFFFFF"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/diary" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="242dp"
+        android:layout_height="52dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/go_recipe"
+            android:layout_width="30dp"
+            android:layout_height="39dp"
+            android:background="#00000000"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/aaaa" />
+
+        <TextView
+            android:id="@+id/txtDate"
+            android:layout_width="181dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:background="@drawable/line_00"
+            android:text="Date:"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            />
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="你吃了:"
+        android:textSize="20sp"
+        android:id="@+id/txtTime_period_id"
+        android:layout_marginBottom="10dp"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txText"
+            android:layout_width="245dp"
+            android:padding="20dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="35dp"
+            android:background="@drawable/line_0513"
+            android:gravity="center"
+            android:lineSpacingExtra="10sp"
+            android:text=" "
+            android:textColor="#081871"
+            android:textSize="12sp"/>
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
