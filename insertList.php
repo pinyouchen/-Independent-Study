@@ -14,14 +14,14 @@
     $in_ingre = "INSERT INTO ingredient(Ingre) VALUES ('$ingre')";
     $result=mysqli_query($conn,$sql);
     $row=mysqli_fetch_assoc($result);
-    if (!mysql_num_rows($result)) 
+    if (!mysqli_num_rows($result)) 
     { 
         $resultInsert=$conn->query($in_ingre);
         if($resultInsert){
             $ingre_id=$conn->insert_id;
             $select="INSERT INTO recipe_ingredient(ingredient_id,recipe_id,quantity) VALUES('$ingre_id','$recipeID','$quan')";
             $resultInsert=$conn->query($select);
-            echo "list Inserted";
+            echo "new list Inserted";
         }
         else{
             echo "Failed".mysqli_error($conn);
