@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	
+	<category>
+    <pattern>推薦食譜</pattern>
+    <template>
+        請選擇一個選項
+        <button>
+            <text>肉類</text>
+            <postback>meat</postback>
+        </button>
+        
+        <button>
+            <text>海鮮類</text>
+            <postback>seafood</postback>
+        </button>
+        
+        <button>
+            <text>蔬食類</text>
+            <postback>vegetable</postback>
+        </button>
+        
+    </template>
+</category>
+
+<category>
+    <pattern>問我一個問題</pattern>
+    <template>
+        您喜歡這個Yo主廚的app嗎?
+        <reply>
+            <text>YES!</text>
+            <postback>CHOOSE YES</postback>
+        </reply>
+        
+        <reply>
+            <text>NO!</text>
+            <postback>CHOOSE NO</postback>
+        </reply>
+        
+    </template>
+</category>
+	
+
+<category>
+    <pattern>CHOOSE YES</pattern>
+    <template>太棒了! 我們也喜歡您這位用戶</template>
+</category>
+
+<category>
+    <pattern>CHOOSE NO</pattern>
+    <template>很抱歉讓您覺得不方便使用，希望您能夠提供建議給我</template>
+</category>
+
+</aiml>

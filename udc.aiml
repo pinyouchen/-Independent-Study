@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+ <category>
+<pattern>HI</pattern>
+<template>
+  <random>
+    <li>Hello!</li>
+    <li>Well hello there.</li>
+    <li>Howdy.</li>
+    <li>Good day.</li>
+    <li>Hi, friend.</li>
+  </random>
+</template>
+</category>
+
+<category>
+<pattern>*</pattern>
+<template>
+  <random>
+    <li>What was that?</li>
+    <li>I don't understand.</li>
+    <li>Can you say that in a different way?</li>
+  </random>
+</template>
+</category>
+</aiml>

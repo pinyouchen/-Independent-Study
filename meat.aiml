@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    
+	
+<category>
+    <pattern>meat</pattern>
+    <template>
+        請選擇一個肉類選項
+        <button>
+            <text>飯類</text>
+            <postback>meatrice</postback>
+        </button>
+        
+        <button>
+            <text>麵類</text>
+            <postback>meatnoddles</postback>
+        </button>
+        
+        <button>
+            <text>其他</text>
+            <postback>meatothers</postback>
+        </button>
+    </template>
+</category>
+
+
+<category>
+    <pattern>meatrice</pattern>
+    <template>
+        請選擇一個熱門食譜或是最新食譜
+        <button>
+            <text>熱門食譜</text>
+            <postback>popularmeatrice</postback>
+        </button>
+        
+        <button>
+            <text>最新食譜</text>
+            <postback>newestmeatrice</postback>
+        </button>
+     
+    </template>
+</category>
+
+<category>
+    <pattern>popularmeatrice</pattern>
+    <template>
+        <think>
+            <set var="response">
+            <callapi><url></url></callapi>
+            </set>
+        </think>
+        <card>
+           
+        </card>
+    </template>
+</category>
+
+
+<category>
+    <pattern>newestmeatrice</pattern>
+    <template>
+        <think>
+            <set var="response">
+            <callapi><url></url></callapi>
+            </set>
+        </think>
+        <card>
+            
+        </card>
+    </template>
+</category>
+
+<category>
+    <pattern>meatnoddles</pattern>
+    <template>
+        請選擇一個熱門食譜或是最新食譜
+        <button>
+            <text>熱門食譜</text>
+            <postback>popularmeatnoddles</postback>
+        </button>
+        
+        <button>
+            <text>最新食譜</text>
+            <postback>newestmeatnoddles</postback>
+        </button>
+     
+    </template>
+</category>
+
+<category>
+    <pattern>popularmeatnoddles</pattern>
+    <template>
+        <think>
+            <set var="response">
+            <callapi><url>https://louis32132118.000webhostapp.com/getRecipe.php</url></callapi>
+            </set>
+        </think>
+        <card>
+            <image><jsonpath><path>$.data[0].picture</path><get var="response" /></jsonpath></image>
+            <title><jsonpath><path>$.data[0].recipename</path><get var="response" /></jsonpath></title>
+            <subtitle><jsonpath><path>$.data[0].username</path><get var="response" /></jsonpath></subtitle>
+        </card>
+    </template>
+</category>
+
+
+<category>
+    <pattern>newestmeatnoddles</pattern>
+    <template>
+        <think>
+            <set var="response">
+            <callapi><url>https://louis32132118.000webhostapp.com/getRecipe.php</url></callapi>
+            </set>
+        </think>
+        <card>
+            <image><jsonpath><path>$.data[0].picture</path><get var="response" /></jsonpath></image>
+            <title><jsonpath><path>$.data[0].recipename</path><get var="response" /></jsonpath></title>
+            <subtitle><jsonpath><path>$.data[0].username</path><get var="response" /></jsonpath></subtitle>
+        </card>
+    </template>
+</category>
+
+
+<category>
+    <pattern>meatothers</pattern>
+    <template>
+        請選擇一個熱門食譜或是最新食譜
+        <button>
+            <text>熱門食譜</text>
+            <postback>popularmeatothers</postback>
+        </button>
+        
+        <button>
+            <text>最新食譜</text>
+            <postback>newestmeatothers</postback>
+        </button>
+     
+    </template>
+</category>
+
+
+<category>
+    <pattern>popularmeatothers</pattern>
+    <template>
+        <think>
+            <set var="response">
+            <callapi><url>https://louis32132118.000webhostapp.com/getRecipe.php</url></callapi>
+            </set>
+        </think>
+        <card>
+            <image><jsonpath><path>$.data[1].picture</path><get var="response" /></jsonpath></image>
+            <title><jsonpath><path>$.data[1].recipename</path><get var="response" /></jsonpath></title>
+            <subtitle><jsonpath><path>$.data[1].username</path><get var="response" /></jsonpath></subtitle>
+        </card>
+    </template>
+</category>
+
+
+<category>
+    <pattern>newestmeatothers</pattern>
+    <template>
+        <think>
+            <set var="response">
+            <callapi><url>https://louis32132118.000webhostapp.com/getRecipe.php</url></callapi>
+            </set>
+        </think>
+        <card>
+            <image><jsonpath><path>$.data[1].picture</path><get var="response" /></jsonpath></image>
+            <title><jsonpath><path>$.data[1].recipename</path><get var="response" /></jsonpath></title>
+            <subtitle><jsonpath><path>$.data[1].username</path><get var="response" /></jsonpath></subtitle>
+        </card>
+    </template>
+</category>
+
+
+</aiml>
