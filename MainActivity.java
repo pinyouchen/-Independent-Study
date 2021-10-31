@@ -1,154 +1,88 @@
-package com.example.test3;
+package com.example.test5;
 
-import android.Manifest;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.os.Bundle;
-import android.util.Base64;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
+import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-import com.karumi.dexter.Dexter;
-import com.karumi.dexter.PermissionToken;
-import com.karumi.dexter.listener.PermissionDeniedResponse;
-import com.karumi.dexter.listener.PermissionGrantedResponse;
-import com.karumi.dexter.listener.PermissionRequest;
-import com.karumi.dexter.listener.single.PermissionListener;
+import java.util.ArrayList;
 
-import java.io.ByteArrayOutputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
-import java.util.HashMap;
-import java.util.Map;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnSelectImage,btnUploadImage;
-    ImageView imageView;
-    Bitmap bitmap;
-    String encodedImage;
+    private RecyclerView chatsRV;
+    private EditText userMsgEdt;
+    private FloatingActionButton sendMsgFAB;
+    private final String BOT_KEY = "bot";
+    private final String USER_KEY = "user";
+    private ArrayList<ChatModel>chatModelArrayList;
+    private ChatRVAdapter chatRVAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        chatsRV = findViewById(R.id.idRVChats);
+        userMsgEdt = findViewById(R.id.idEdtMessage);
+        sendMsgFAB = findViewById(R.id.idFABSend);
+        chatModelArrayList = new ArrayList<>();
+        chatRVAdapter = new ChatRVAdapter(chatModelArrayList,this);
+        LinearLayoutManager manager = new LinearLayoutManager(this);
+        chatsRV.setLayoutManager(manager);
+        chatsRV.setAdapter(chatRVAdapter);
 
-        btnSelectImage = findViewById(R.id.btnSelectImage);
-        btnUploadImage = findViewById(R.id.btnUploadImage);
-        imageView = findViewById(R.id.imView);
-
-        btnSelectImage.setOnClickListener(new View.OnClickListener() {
+        sendMsgFAB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Dexter.withActivity(MainActivity.this)
-                        .withPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
-                        .withListener(new PermissionListener() {
-                            @Override
-                            public void onPermissionGranted(PermissionGrantedResponse response) {
-
-                                Intent intent  = new Intent(Intent.ACTION_PICK);
-                                intent.setType("image/*");
-                                startActivityForResult(Intent.createChooser(intent,"Select Image"),1);
-
-                            }
-
-                            @Override
-                            public void onPermissionDenied(PermissionDeniedResponse response) {
-
-                            }
-
-                            @Override
-                            public void onPermissionRationaleShouldBeShown(PermissionRequest permission, PermissionToken token) {
-                                token.continuePermissionRequest();
-                            }
-                        }).check();
-
-
+                if(userMsgEdt.getText().toString().isEmpty()){
+                    Toast.makeText(MainActivity.this,"please enter your message",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                getResponse(userMsgEdt.getText().toString());
+                userMsgEdt.setText("");
             }
         });
 
-        btnUploadImage.setOnClickListener(new View.OnClickListener() {
+    }
+    private void getResponse(String message){
+        chatModelArrayList.add(new ChatModel(message,USER_KEY));
+        chatRVAdapter.notifyDataSetChanged();
+        String url = "http://api.brainshop.ai/get?bid=158449&key=9CPgWrJWDMhs2Fz6&uid=[uid]&msg="+message;
+        String BASE_URL = "http://api.brainshop.ai/";
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        RetrofitAPI retrofitAPI = retrofit.create(RetrofitAPI.class);
+        Call<MsgModel> call = retrofitAPI.getMessage(url);
+        call.enqueue(new Callback<MsgModel>() {
             @Override
-            public void onClick(View v) {
+            public void onResponse(Call<MsgModel> call, Response<MsgModel> response) {
+                if(response.isSuccessful()){
+                    MsgModel model = response.body();
+                    chatModelArrayList.add(new ChatModel(model.getCnt(),BOT_KEY));
+                    chatRVAdapter.notifyDataSetChanged();
+                }
+            }
 
-                StringRequest request = new StringRequest(Request.Method.POST, "https://louis32132118.000webhostapp.com/uploadImage.php"
-                        , new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-
-                        Toast.makeText(MainActivity.this, response, Toast.LENGTH_SHORT).show();
-
-                    }
-                }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(MainActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                }){
-                    @Override
-                    protected Map<String, String> getParams() throws AuthFailureError {
-                        Map<String, String> params = new HashMap<>();
-                        params.put("image", encodedImage);
-                        return params;
-                    }
-                };
-
-                RequestQueue requestQueue = Volley.newRequestQueue(MainActivity.this);
-                requestQueue.add(request);
-
+            @Override
+            public void onFailure(Call<MsgModel> call, Throwable t) {
+                chatModelArrayList.add(new ChatModel("please revert your question",BOT_KEY));
+                chatRVAdapter.notifyDataSetChanged();
             }
         });
-    }
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-
-        if(requestCode == 1 && resultCode == RESULT_OK && data!=null){
-
-            Uri filePath = data.getData();
-
-            try {
-                InputStream inputStream = getContentResolver().openInputStream(filePath);
-                bitmap = BitmapFactory.decodeStream(inputStream);
-                imageView.setImageBitmap(bitmap);
-
-                imageStore(bitmap);
-
-
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
-
-
-        }
-
-        super.onActivityResult(requestCode, resultCode, data);
-
-    }
-
-    private void imageStore(Bitmap bitmap) {
-
-        ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG,100,stream);
-
-        byte[] imageBytes = stream.toByteArray();
-
-        encodedImage = Base64.encodeToString(imageBytes, Base64.DEFAULT);
 
 
     }
-
 }
