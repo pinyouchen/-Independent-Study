@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF9E5"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".Register">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/chef" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="註冊帳號"
+                android:textColor="#5B4627"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Sign up  to start your new first"
+                android:layout_marginTop="10dp"
+                android:textColor="#5B4627" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/sign_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="輸入暱稱"
+                    android:textColorHint="#8B877C"
+
+                    app:counterMaxLength="15">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/regName"
+                        android:layout_width="296dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:inputType="text"
+                        android:textColor="#8B877C" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/sign_email"
+                    style="@style/Widget.Design.TextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="輸入電子郵件"
+                    android:textColorHint="#8B877C"
+                    app:errorEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/regEmail"
+                        android:layout_width="296dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:inputType="text" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/sign_pwd"
+                    style="@style/Widget.Design.TextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="輸入密碼(6位以上且包含英數字)"
+                    android:textColorHint="#8B877C"
+                    app:errorEnabled="true"
+                    app:passwordToggleEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/regPass"
+                        android:layout_width="296dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:inputType="textPassword" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/sign_agpwd"
+                    style="@style/Widget.Design.TextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="再次輸入密碼"
+                    android:textColorHint="#8B877C"
+                    app:errorEnabled="true"
+                    app:passwordToggleEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/regAPass"
+                        android:layout_width="296dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:inputType="textPassword" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnReg"
+                android:layout_width="176dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="#FFC107"
+                android:onClick="Register"
+                android:text="註冊帳號"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/back_login"
+                android:layout_width="176dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="#00000000"
+                android:onClick="moveToLogin"
+                android:text="已經有帳號了? 由此登入"
+                android:textColor="#8B877C" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
