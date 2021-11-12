@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+  
+<category>
+    <pattern>* 食譜</pattern>
+    <template>
+        請選擇您想要的類別(肉類、海鮮類、蔬食類 和 飯、麵、其他)
+    </template>
+</category>
+
+<category>
+    <pattern>* 推薦食譜</pattern>
+    <template>
+        請選擇您想要的類別(肉類、海鮮類、蔬食類 和 飯、麵、其他)
+    </template>
+</category>
+
+<category>
+    <pattern>* 肉類和飯類</pattern>
+    <template>
+        <random>
+            <li>最近天氣蠻冷的，我會推薦你吃火腿炒飯</li>
+            <li>最近天氣蠻冷的，我會推薦你吃滷肉飯</li>
+            <li>如果要推薦的話，我可能會推薦你吃炙燒牛肉握壽司</li>
+            <li>如果要推薦的話，我可能會推薦你吃控肉飯</li>
+            <li>鴨肉飯，還不錯，你可以試試看</li>
+        </random>
+    </template>
+</category>
+
+<category>
+    <pattern>* 肉類和麵類</pattern>
+    <template>
+        <random>
+            <li>最近天氣蠻冷的，我會推薦你吃牛肉麵</li>
+            <li>最近天氣蠻冷的，我會推薦你吃大腸麵線</li>
+            <li>如果要推薦的話，我可能會推薦你吃日式拉麵</li>
+            <li>如果要推薦的話，我可能會推薦你吃焗烤筆尖麵</li>
+            <li>牛肉刀削麵，還不錯，你可以試試看</li>
+        </random>
+    </template>
+</category>
+
+<category>
+    <pattern>* 肉類和其他</pattern>
+    <template>
+        <random>
+            <li>最近天氣蠻冷的，我會推薦你吃豬肝湯</li>
+            <li>最近天氣蠻冷的，我會推薦你吃炒牛肉</li>
+            <li>如果要推薦的話，我可能會推薦你吃雞米花</li>
+            <li>如果要推薦的話，我可能會推薦你吃梅干扣肉</li>
+            <li>圤肉，還不錯，你可以試試看</li>
+        </random>
+    </template>
+</category>
+
+<category>
+    <pattern>* 海鮮類和飯類</pattern>
+    <template>
+        <random>
+            <li>最近天氣蠻冷的，我會推薦你吃海鮮燉飯</li>
+            <li>最近天氣蠻冷的，我會推薦你吃海鮮粥</li>
+            <li>如果要推薦的話，我可能會推薦你吃海鮮炒飯</li>
+            <li>如果要推薦的話，我可能會推薦你吃番茄海鮮燉飯</li>
+            <li>鮭魚握壽司，還不錯，你可以試試看</li>
+        </random>
+    </template>
+</category>
+
+<category>
+    <pattern>* 海鮮類和麵類</pattern>
+    <template>
+        <random>
+            <li>最近天氣蠻冷的，我會推薦你吃海鮮拉麵</li>
+            <li>最近天氣蠻冷的，我會推薦你吃蚵仔麵線</li>
+            <li>如果要推薦的話，我可能會推薦你吃海鮮炒麵</li>
+            <li>如果要推薦的話，我可能會推薦你吃番茄海鮮烏龍麵</li>
+            <li>海鮮蔬菜義大利麵，還不錯，你可以試試看</li>
+        </random>
+    </template>
+</category>
+
+<category>
+    <pattern>* 海鮮類和其他</pattern>
+    <template>
+        <random>
+            <li>最近天氣蠻冷的，我會推薦你吃鹽烤龍蝦</li>
+            <li>最近天氣蠻冷的，我會推薦你吃海鮮火鍋</li>
+            <li>如果要推薦的話，我可能會推薦你吃絲瓜蛤蠣</li>
+            <li>如果要推薦的話，我可能會推薦你吃生蠔</li>
+            <li>香煎鮭魚排，還不錯，你可以試試看</li>
+        </random>
+    </template>
+</category>
+
+<category>
+    <pattern>* 蔬食類和飯類</pattern>
+    <template>
+        <random>
+            <li>最近天氣蠻冷的，我會推薦你吃高麗菜炒飯</li>
+            <li>最近天氣蠻冷的，我會推薦你吃小黃瓜壽司</li>
+            <li>如果要推薦的話，我可能會推薦你吃蔬食羹飯</li>
+            <li>如果要推薦的話，我可能會推薦你吃麻油菇菇炊飯</li>
+            <li>素韓式拌飯，還不錯，你可以試試看</li>
+        </random>
+    </template>
+</category>
+
+<category>
+    <pattern>* 蔬食類和麵類</pattern>
+    <template>
+        <random>
+            <li>最近天氣蠻冷的，我會推薦你吃蔬食羹麵</li>
+            <li>最近天氣蠻冷的，我會推薦你吃蔬食炸醬麵</li>
+            <li>如果要推薦的話，我可能會推薦你吃涼麵</li>
+            <li>如果要推薦的話，我可能會推薦你吃南瓜咖哩炒米粉</li>
+            <li>蔬食麵，還不錯，你可以試試看</li>
+        </random>
+    </template>
+</category>
+
+<category>
+    <pattern>* 蔬食類和其他</pattern>
+    <template>
+        <random>
+            <li>最近天氣蠻冷的，我會推薦你吃蔥油餅</li>
+            <li>最近天氣蠻冷的，我會推薦你喝蔬食湯</li>
+            <li>如果要推薦的話，我可能會推薦你吃打拋蔬食豬</li>
+            <li>如果要推薦的話，我可能會推薦你吃花生全麥蔬食三明治</li>
+            <li>竹筍南瓜包，還不錯，你可以試試看</li>
+        </random>
+    </template>
+</category>
+
+</aiml>
